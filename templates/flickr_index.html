@@ -1,0 +1,39 @@
+<{include file='db:flickr_header.html'}>
+<div id="photos_container">
+<h3><{$smarty.const._FLICKR_MY_PHOTOS}></h3><br>
+<{if $flickr_photoCount > 0}>
+
+<table border="0">
+<tr>
+    <td width="40%">    
+        <div id="photo_samples">
+        <{foreach from=$flickr_photos item=photo}>
+            <p class="photoBlock">
+                <a href="<{$flickr_url}>/index.php?photo_id=<{$photo.id}>">
+                    <img src="<{$photo.square}>" title="<{$photo.title}>" alt="<{$photo.title}>" class="flickr_img_hover">
+                </a>
+            </p>
+        <{/foreach}>
+        </div>
+    </td>
+    <td width="60%">
+    <{if $flickr_activePhoto neq 0}>
+        <div id="photo_info">
+            <h4 class="imageTitle"><{$flickr_activePhoto.title}></h4>
+            <div id="photo_container">
+                <a href="<{$flickr_url}>/photo.php?id=<{$flickr_activePhoto.id}>"><img src="<{$flickr_activePhoto.small}>" title="<{$flickr_activePhoto.title}>" alt="<{$flickr_activePhoto.title}>"></a>
+            </div>
+            <br>
+            <p><{$flickr_activePhoto.description}></p>
+        </div>
+    <{else}>
+        
+    <{/if}>
+    </td>
+</tr>
+</table>
+
+<{else}>
+<{$smarty.const._FLICKR_NO_PHOTOS}>
+<{/if}>
+</div>

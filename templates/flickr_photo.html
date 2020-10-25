@@ -1,0 +1,17 @@
+<{include file='db:flickr_header.html'}>
+<div id="photos_container">
+<div id="photo_info">
+    <h4 class="imageTitle"><{$flickr_photo.title}></h4>
+    <div id="photo_container">
+        <img src="<{$flickr_defaultSize}>" title="<{$flickr_photo.title}>" alt="<{$flickr_photo.title}>">
+    </div>
+    <br>
+    |
+    <{foreach from=$flickr_photoSizes item=size}>
+        &nbsp;
+        <a href="<{$flickr_url}>/photo.php?&id=<{$flickr_photo.id}>&size=<{$size.name}>"><{$size.name}></a>
+        &nbsp;|
+    <{/foreach}>
+    <p><{$flickr_photo.description}></p>
+</div>
+</div>

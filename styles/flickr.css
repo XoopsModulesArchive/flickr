@@ -1,0 +1,22 @@
+div#photos_container {
+    margin: 0px;
+    text-align: center;
+}
+
+#photo_info div {
+    
+}
+
+#photo_container img {
+    border-width: 1px 1px 1px 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.photoBlock {padding: 0px; margin-right: 5px; margin-bottom: 0px; float: left; text-align: center;}
+
+#photo_samples img {
+    border-width: 1px 1px 1px 1px;
+    border-color: black;
+    border-style: solid;
+}
